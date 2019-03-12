@@ -33,8 +33,17 @@
     <WarningLevel>4</WarningLevel>
   </PropertyGroup>
   <ItemGroup>
+    <Reference Include="EntityFramework, Version=6.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089, processorArchitecture=MSIL">
+      <HintPath>..\packages\EntityFramework.6.2.0\lib\net45\EntityFramework.dll</HintPath>
+    </Reference>
+    <Reference Include="EntityFramework.SqlServer, Version=6.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089, processorArchitecture=MSIL">
+      <HintPath>..\packages\EntityFramework.6.2.0\lib\net45\EntityFramework.SqlServer.dll</HintPath>
+    </Reference>
     <Reference Include="System" />
+    <Reference Include="System.ComponentModel.DataAnnotations" />
     <Reference Include="System.Core" />
+    <Reference Include="System.Runtime.Serialization" />
+    <Reference Include="System.Security" />
     <Reference Include="System.Xml.Linq" />
     <Reference Include="System.Data.DataSetExtensions" />
     <Reference Include="Microsoft.CSharp" />
@@ -43,11 +52,40 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="Modelos\Alphabetical_list_of_products.cs" />
+    <Compile Include="Modelos\Categories.cs" />
+    <Compile Include="Modelos\Category_Sales_for_1997.cs" />
+    <Compile Include="Modelos\Current_Product_List.cs" />
+    <Compile Include="Modelos\CustomerDemographics.cs" />
+    <Compile Include="Modelos\Customers.cs" />
+    <Compile Include="Modelos\Customer_and_Suppliers_by_City.cs" />
+    <Compile Include="Modelos\Employees.cs" />
+    <Compile Include="Modelos\Invoices.cs" />
+    <Compile Include="Modelos\Northwind.cs" />
+    <Compile Include="Modelos\Orders.cs" />
+    <Compile Include="Modelos\Orders_Qry.cs" />
+    <Compile Include="Modelos\Order_Details.cs" />
+    <Compile Include="Modelos\Order_Details_Extended.cs" />
+    <Compile Include="Modelos\Order_Subtotals.cs" />
+    <Compile Include="Modelos\Products.cs" />
+    <Compile Include="Modelos\Products_Above_Average_Price.cs" />
+    <Compile Include="Modelos\Products_by_Category.cs" />
+    <Compile Include="Modelos\Product_Sales_for_1997.cs" />
+    <Compile Include="Modelos\Region.cs" />
+    <Compile Include="Modelos\Sales_by_Category.cs" />
+    <Compile Include="Modelos\Sales_Totals_by_Amount.cs" />
+    <Compile Include="Modelos\Shippers.cs" />
+    <Compile Include="Modelos\Summary_of_Sales_by_Quarter.cs" />
+    <Compile Include="Modelos\Summary_of_Sales_by_Year.cs" />
+    <Compile Include="Modelos\Suppliers.cs" />
+    <Compile Include="Modelos\Territories.cs" />
     <Compile Include="Program.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
   </ItemGroup>
   <ItemGroup>
     <None Include="App.config" />
+    <None Include="packages.config" />
   </ItemGroup>
+  <ItemGroup />
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
 </Project>

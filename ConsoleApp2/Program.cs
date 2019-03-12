@@ -3,6 +3,7 @@ using System.Collections.Generic;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
+using ConsoleApp2.Modelos;
 
 namespace ConsoleApp2
 {
@@ -11,7 +12,7 @@ namespace ConsoleApp2
         public static void Main(string[] args)
         {
             Console.Clear();
-            Consultas.Query1();
+            Consultas.Query2();
 
             Console.ReadKey();
         }
@@ -24,18 +25,40 @@ namespace ConsoleApp2
         //TODO Retorna una lista de productos agrupados por Categoría mediante LINQ
         public static void Query1()
         {
+            Northwind db = new Northwind();
+            var q1 = db.Products
+                .GroupBy(p => p.Categories.CategoryName)
+                .Select(k => new
+                {
+                    id = k.Key,
+                    cuenta = k.Sum(s => s.ProductID)
+                })
+                .ToList();
+            foreach (var item in q1)
+            {
+                Console.WriteLine("{0} - {1}",item.id,item.cuenta);
+            }
            
         }
 
         //TODO Retorna una lista de productos agrupados por la primera letra del nombre de producto mediante LINQ
         public static void Query2()
         {
+            Northwind db = new Northwind();
+            var q2 = db.Products
+                .OrderBy(s => s.ProductName)
+                .ToList();
+            foreach (var item in q2)
+            {
+                Console.WriteLine(item.ProductName);
+            }
         }
 
         //TODO Retorna el array ordenado mediante LINQ
         public static void Query3()
         {
             string[] words = { "cherry", "apple", "blueberry" };
+            
         }
 
         //TODO Retorna el array transformado en un diccionarios mediante LINQ
