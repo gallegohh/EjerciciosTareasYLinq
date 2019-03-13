@@ -69,15 +69,8 @@ namespace ConsoleApp1
         public List<Products> BuscarProducto(string nombreProducto)
         {
             Console.WriteLine("Comienza el método síncrono");
-            List<Products> listaProductos = new List<Products>();
-            ModelNorthwind db = new ModelNorthwind();
-
-            listaProductos = db.Products
-                .Where(p => p.ProductName.Contains(nombreProducto))
-                .AsQueryable().ToList();
-
-            Console.WriteLine("Termina el método síncrono");
-            return listaProductos;
+            
+            return BuscarProductoAsync(nombreProducto).Result;
         }
 
     }
